@@ -1,0 +1,112 @@
+.footer {
+    padding: 100px var(--padding-x) 40px;
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.footer-content {
+    width: 100%;
+}
+
+.footer-cta {
+    margin-bottom: 15vh;
+}
+
+.cta-label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 30px;
+}
+
+.cta-headline {
+    font-size: clamp(50px, 12vw, 150px);
+    line-height: 0.9;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 40px;
+}
+
+.cta-email {
+    font-size: clamp(18px, 3vw, 32px);
+    font-weight: 300;
+    color: var(--text-color);
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 1px;
+    transition: opacity 0.3s ease;
+}
+
+.cta-email:hover {
+    opacity: 0.6;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 40px;
+}
+
+.footer-social-link {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.footer-social-link:hover {
+    color: var(--text-color);
+}
+
+.footer-credits {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.credit-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 80px 20px 40px;
+    }
+
+    .cta-headline {
+        font-size: 48px;
+        line-height: 1;
+    }
+
+    .cta-email {
+        font-size: 18px;
+    }
+
+    .footer-socials {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .footer-credits {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+}

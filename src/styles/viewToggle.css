@@ -1,0 +1,71 @@
+.view-toggle-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px var(--padding-x);
+    margin-top: -60px;
+    /* Overlap with previous section slightly */
+    position: relative;
+    z-index: 10;
+}
+
+.view-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 8px 24px;
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.toggle-btn.active {
+    color: var(--text-color);
+}
+
+.separator {
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 11px;
+}
+
+.archive-link a {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.archive-link a:hover {
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .view-toggle-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 20px;
+        margin-top: 0;
+    }
+
+    .view-toggle {
+        padding: 6px 16px;
+    }
+
+    .toggle-btn {
+        font-size: 10px;
+    }
+}

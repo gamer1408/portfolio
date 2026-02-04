@@ -1,0 +1,139 @@
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-color);
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.hero-headline {
+    font-size: clamp(60px, 16vw, 240px);
+    line-height: 0.78;
+    /* Critical: Tight line-height matching Roshan Sahu */
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    /* Critical: Negative tracking for editorial look */
+    text-transform: uppercase;
+    margin: 0;
+    will-change: transform;
+}
+
+.line {
+    overflow: hidden;
+    display: block;
+    height: 1.1em;
+    /* To prevent clipping of descenders if any, though uppercase */
+    margin-bottom: -0.1em;
+}
+
+.line-inner {
+    display: inline-block;
+    will-change: transform;
+}
+
+.hero-subtext-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.hero-description {
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 400;
+    max-width: 320px;
+    color: var(--text-color);
+    letter-spacing: -0.01em;
+    opacity: 0.8;
+}
+
+.hero-tags {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.hero-footer {
+    position: absolute;
+    bottom: var(--padding-y);
+    left: var(--padding-x);
+}
+
+.scroll-indicator {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.arrow {
+    width: 1px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.arrow::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    border-right: 1.5px solid var(--text-secondary);
+    border-bottom: 1.5px solid var(--text-secondary);
+    transform: translateX(-50%) rotate(45deg);
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 80px;
+    }
+
+    .hero-headline {
+        font-size: clamp(50px, 20vw, 100px);
+        line-height: 0.85;
+    }
+
+    .hero-subtext-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+        max-width: 100%;
+    }
+
+    .hero-tags {
+        align-items: flex-start;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+}
