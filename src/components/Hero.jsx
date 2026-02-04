@@ -70,11 +70,11 @@ const Hero = () => {
                 <div className="hero-subtext-container" ref={subtextRef}>
                     <p className="hero-description">
                         Creative Web Developer <br />
-                        based in Bengaluru, India.
+                        based in Angren, Uzbekistan.
                     </p>
                     <div className="hero-tags">
                         <span>FREELANCE</span>
-                        <span>2024</span>
+                        <span>2025</span>
                     </div>
                 </div>
             </div>
