@@ -13,7 +13,7 @@ const Navbar = () => {
         // Entrance animation
         gsap.fromTo(navRef.current,
             { y: -100, opacity: 0 },
-            { y: 0, opacity: 1, duration: 1, ease: 'power4.out', delay: 0.1 }
+            { y: 0, opacity: 1, duration: 1, ease: 'power4.out', delay: 3.1 }
         );
 
         return () => clearInterval(timer);

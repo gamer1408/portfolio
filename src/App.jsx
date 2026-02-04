@@ -11,25 +11,19 @@ import Preloader from './components/Preloader'
 
 function App() {
   const [view, setView] = useState('stack');
-  const [loading, setLoading] = useState(true);
 
   return (
     <main>
-      <Preloader onComplete={() => setLoading(false)} />
-
-      {!loading && (
-        <>
-          <div className="grain-overlay"></div>
-          <Cursor />
-          <Navbar />
-          <Hero />
-          <About />
-          <MarqueeSection />
-          <ViewToggle currentView={view} onViewChange={setView} />
-          <Projects view={view} />
-          <Footer />
-        </>
-      )}
+      <Preloader />
+      <div className="grain-overlay"></div>
+      <Cursor />
+      <Navbar />
+      <Hero />
+      <About />
+      <MarqueeSection />
+      <ViewToggle currentView={view} onViewChange={setView} />
+      <Projects view={view} />
+      <Footer />
     </main>
   )
 }

@@ -22,7 +22,7 @@ const Hero = () => {
                     duration: 1.2,
                     stagger: 0.1,
                     ease: 'power4.out',
-                    delay: 0.2
+                    delay: 3.2 // Wait for preloader to almost finish
                 }
             );
 
@@ -34,7 +34,7 @@ const Hero = () => {
                     y: 0,
                     duration: 0.8,
                     ease: 'power3.out',
-                    delay: 0.8
+                    delay: 3.8
                 }
             );
 
