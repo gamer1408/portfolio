@@ -4,8 +4,8 @@ import '../styles/preloader.css';
 
 const Preloader = () => {
     const preloaderRef = useRef(null);
+    const iconRef = useRef(null);
     const counterRef = useRef(null);
-    const textRef = useRef(null);
     const panelRef = useRef(null);
 
     useEffect(() => {
@@ -13,13 +13,14 @@ const Preloader = () => {
             const tl = gsap.timeline();
 
             // 1. Initial State
-            gsap.set(textRef.current, { y: 100, opacity: 0 });
+            gsap.set(iconRef.current, { scale: 0.8, opacity: 0, rotate: -10 });
 
-            // 2. Animate text in
-            tl.to(textRef.current, {
-                y: 0,
+            // 2. Animate icon in
+            tl.to(iconRef.current, {
+                scale: 1,
                 opacity: 1,
-                duration: 1,
+                rotate: 0,
+                duration: 1.2,
                 ease: "power4.out",
                 delay: 0.5
             });
@@ -37,10 +38,11 @@ const Preloader = () => {
                 }
             }, "-=0.5");
 
-            // 4. Move text up slightly faster
-            tl.to(textRef.current, {
-                y: -20,
+            // 4. Move icon up and fade out
+            tl.to(iconRef.current, {
+                y: -30,
                 opacity: 0,
+                scale: 0.9,
                 duration: 0.6,
                 ease: "power2.in",
                 delay: 0.2
@@ -64,10 +66,39 @@ const Preloader = () => {
     return (
         <div className="preloader" ref={preloaderRef}>
             <div className="preloader-content">
-                <div className="preloader-text-container">
-                    <h2 className="preloader-brand" ref={textRef}>
-                        YAHYOBEK <span className="preloader-dot">.</span>
-                    </h2>
+                <div className="preloader-icon-container" ref={iconRef}>
+                    <svg className="preloader-icon" viewBox="0 0 50 50">
+                        <path
+                            className="icon-path"
+                            d="M15 15 L25 25 L35 15"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            pathLength="100"
+                        />
+                        <path
+                            className="icon-path"
+                            d="M25 25 L25 35"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            pathLength="100"
+                        />
+                        <circle
+                            cx="25"
+                            cy="25"
+                            r="20"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="0.5"
+                            strokeDasharray="2 4"
+                            opacity="0.3"
+                        />
+                    </svg>
                 </div>
                 <div className="preloader-status">
                     <span className="preloader-count" ref={counterRef}>0</span>

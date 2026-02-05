@@ -32,7 +32,7 @@ const Navbar = () => {
         <nav className="navbar" ref={navRef}>
             <div className="nav-container">
                 <div className="nav-logo">
-                    <a href="/">YAHYOBEK UROZALIYEV</a>
+                    <a href="/">yahyobek-urozaliyev</a>
                 </div>
 
                 <div className="nav-time">
